@@ -1,0 +1,98 @@
+---
+layout: layouts/base.njk
+pageClass: page-blog-post
+---
+
+<div class="blog-post-shell">
+  <div class="blog-topbar">
+    <a href="/blog/" class="blog-topbar-link">All Posts</a>
+  </div>
+
+  <article class="blog-post-article">
+    <div class="blog-meta">
+      <span class="author-avatar" aria-hidden="true">{{ (author | default("Lisa Bernarde"))[0] }}</span>
+      <span class="author-name">{{ author | default("Lisa Bernarde") }}</span>
+      <span class="meta-dot">&bull;</span>
+      <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>
+      {% if readTime %}
+      <span class="meta-dot">&bull;</span>
+      <span>{{ readTime }}</span>
+      {% endif %}
+    </div>
+
+    <h1 class="blog-post-title">{{ title }}</h1>
+
+    <div class="blog-post-body">
+      {{ content | safe }}
+    </div>
+
+    <div class="blog-share-bar">
+      <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook" data-share="facebook">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg>
+      </a>
+      <a class="share-btn" href="https://x.com/intent/tweet" target="_blank" rel="noopener noreferrer" aria-label="Share on X" data-share="x">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn" data-share="linkedin">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"/></svg>
+      </a>
+      <button type="button" class="share-btn share-copy" aria-label="Copy post link">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <span class="share-copied-label" aria-live="polite"></span>
+      </button>
+    </div>
+  </article>
+
+  {% set recentList = collections.posts | recentPosts(page.url, 2) %}
+  {% if recentList.length > 0 %}
+  <section class="recent-posts-section">
+    <div class="recent-posts-header">
+      <h2>Recent Posts</h2>
+      <a href="/blog/" class="see-all-link">See All</a>
+    </div>
+
+    <div class="recent-posts-grid">
+      {% for recent in recentList %}
+      <a href="{{ recent.url }}" class="recent-post-card">
+        <div class="recent-post-thumb">
+          {% if recent.data.image %}
+          <img src="{{ recent.data.image }}" alt="{{ recent.data.imageAlt | default(recent.data.title) }}">
+          {% else %}
+          <div class="blog-thumb-placeholder"></div>
+          {% endif %}
+        </div>
+        <h3 class="recent-post-title">{{ recent.data.title }}</h3>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+</div>
+
+<script>
+  (function () {
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(document.title);
+    const fb = document.querySelector('[data-share="facebook"]');
+    const x = document.querySelector('[data-share="x"]');
+    const li = document.querySelector('[data-share="linkedin"]');
+    if (fb) fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+    if (x) x.href = "https://x.com/intent/tweet?url=" + url + "&text=" + title;
+    if (li) li.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + url;
+
+    const copyBtn = document.querySelector(".share-copy");
+    const label = document.querySelector(".share-copied-label");
+    if (copyBtn && navigator.clipboard) {
+      copyBtn.addEventListener("click", function () {
+        navigator.clipboard.writeText(window.location.href).then(function () {
+          if (label) {
+            label.textContent = "Copied";
+            setTimeout(function () {
+              label.textContent = "";
+            }, 1800);
+          }
+        });
+      });
+    }
+  })();
+</script>

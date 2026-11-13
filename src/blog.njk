@@ -1,0 +1,100 @@
+---
+layout: layouts/base.njk
+title: Blog | Lunar Light Awakening
+pageClass: page-blog
+permalink: /blog/
+---
+
+<div class="blog-shell">
+  <div class="blog-topbar">
+    <a href="/blog/" class="blog-topbar-link">All Posts</a>
+    <div class="blog-search-wrap">
+      <input type="search" id="blog-search-input" class="blog-search-input" placeholder="Search posts..." aria-label="Search blog posts">
+      <button type="button" id="blog-search-toggle" class="blog-search-btn" aria-label="Search blog posts" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <h1 class="blog-index-title">All Posts</h1>
+
+  <div class="blog-posts-list" id="blog-posts-list">
+    {% for post in collections.posts | reverse %}
+    <article class="blog-card" data-title="{{ post.data.title | lower }}" data-excerpt="{{ post.data.excerpt | default('') | lower }}">
+      <a href="{{ post.url }}" class="blog-card-media">
+        {% if post.data.image %}
+        <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt | default(post.data.title) }}">
+        {% else %}
+        <div class="blog-thumb-placeholder"></div>
+        {% endif %}
+      </a>
+
+      <div class="blog-card-content">
+        <div class="blog-card-meta">
+          <span class="author-avatar" aria-hidden="true">{{ (post.data.author | default("Lisa Bernarde"))[0] }}</span>
+          <div class="blog-card-meta-text">
+            <span class="author-name">{{ post.data.author | default("Lisa Bernarde") }}</span>
+            <span class="blog-card-date">
+              <time datetime="{{ post.data.date | isoDate }}">{{ post.data.date | readableDate }}</time>
+              {% if post.data.readTime %} &bull; {{ post.data.readTime }}{% endif %}
+            </span>
+          </div>
+        </div>
+
+        <h2 class="blog-card-title">
+          <a href="{{ post.url }}">{{ post.data.title }}</a>
+        </h2>
+
+        {% if post.data.excerpt %}
+        <p class="blog-card-excerpt">
+          <a href="{{ post.url }}">{{ post.data.excerpt }}</a>
+        </p>
+        {% endif %}
+
+        <div class="blog-card-footer">
+          <a href="{{ post.url }}" class="blog-read-more">Read post</a>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+  <p class="blog-no-results" id="blog-no-results" hidden>No matching posts found.</p>
+</div>
+
+<script>
+  (function () {
+    const toggle = document.getElementById("blog-search-toggle");
+    const input = document.getElementById("blog-search-input");
+    const cards = Array.from(document.querySelectorAll(".blog-card"));
+    const noResults = document.getElementById("blog-no-results");
+    if (!toggle || !input) return;
+
+    toggle.addEventListener("click", function () {
+      const open = input.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(open));
+      if (open) {
+        input.focus();
+      } else {
+        input.value = "";
+        filterPosts("");
+      }
+    });
+
+    function filterPosts(query) {
+      const q = query.trim().toLowerCase();
+      let visible = 0;
+      cards.forEach(function (card) {
+        const hay = (card.dataset.title || "") + " " + (card.dataset.excerpt || "");
+        const match = !q || hay.includes(q);
+        card.hidden = !match;
+        if (match) visible += 1;
+      });
+      if (noResults) noResults.hidden = visible > 0;
+    }
+
+    input.addEventListener("input", function () {
+      filterPosts(input.value);
+    });
+  })();
+</script>
