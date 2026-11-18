@@ -81,8 +81,7 @@ body {
   text-align: center;
 }
 
-.site-main h1,
-.welcome-title {
+.site-main h1 {
   font-size: 2.15rem;
   font-weight: 800;
   letter-spacing: 0.03em;
@@ -93,8 +92,7 @@ body {
   line-height: 1.25;
 }
 
-.site-main p,
-.content-block p {
+.site-main p {
   font-size: 1.3rem;
   line-height: 1.68;
   color: #ffffff;
@@ -108,23 +106,16 @@ body {
 }
 
 /* Home Page */
-.site-main.page-home img,
-.diagram-image {
+.site-main.page-home img {
   max-width: 520px;
   width: 100%;
-  height: auto;
-  display: block;
   margin: 2.8rem auto 1.5rem auto;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
 }
 
-/* Page-Specific Overrides */
+/* Merchandise Page */
 .site-main.page-merchandise {
   text-align: left;
-}
-
-.site-main.page-merchandise p {
-  color: #ffffff;
 }
 
 .site-main.page-merchandise p:has(img) {
@@ -929,7 +920,6 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .welcome-title,
   .site-main h1 {
     font-size: 1.65rem;
   }
