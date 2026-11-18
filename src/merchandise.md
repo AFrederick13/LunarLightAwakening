@@ -20,7 +20,7 @@ Our store has its roots as a metaphysical crystal shop, so rocks and crystals ar
 
 **Locally created products:** We carry framed art from Ashlie Zeidler and Robert Mayerhofer, lavender eye pillows from Ashlie Zeidler Creative, greeting cards from Under the Ash Tree and Lagom Bodywork & Inner Wellness, crystal-filled eye masks from Organics of Eastwich, orgonite pyramids from Intuitive Orgonites, copper tensor rings and other energy tools from Freeze Cat Emporium Unlimited, metalworks from Iron Garden, and simmer & spell jars from Sequoia’s Spells & Smells.
 
-Room decor: Our stock of decor items is always changing based on demand and availability.
+**Room decor:** Our stock of decor items is always changing based on demand and availability.
 
 ![Store display 1](/images/Merch1.avif)
 
