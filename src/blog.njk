@@ -21,6 +21,7 @@ permalink: /blog/
   <div class="blog-posts-list" id="blog-posts-list">
     {% for post in collections.posts | reverse %}
     {% set previewText = post.data.excerpt or (post.templateContent | excerpt) %}
+    {% set postReadTime = post.data.readTime or (post.templateContent | readTime) %}
     <article class="blog-card" data-title="{{ post.data.title | lower }}" data-excerpt="{{ previewText | lower }}">
       <a href="{{ post.url }}" class="blog-card-media">
         {% if post.data.image %}
@@ -37,7 +38,7 @@ permalink: /blog/
             <span class="author-name">{{ post.data.author | default("Lisa Bernarde") }}</span>
             <span class="blog-card-date">
               <time datetime="{{ post.data.date | isoDate }}">{{ post.data.date | readableDate }}</time>
-              {% if post.data.readTime %} &bull; {{ post.data.readTime }}{% endif %}
+              {% if postReadTime %} &bull; {{ postReadTime }}{% endif %}
             </span>
           </div>
         </div>

@@ -14,9 +14,10 @@ pageClass: page-blog-post
       <span class="author-name">{{ author | default("Lisa Bernarde") }}</span>
       <span class="meta-dot">&bull;</span>
       <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>
-      {% if readTime %}
+      {% set postReadTime = readTime or (content | readTime) %}
+      {% if postReadTime %}
       <span class="meta-dot">&bull;</span>
-      <span>{{ readTime }}</span>
+      <span>{{ postReadTime }}</span>
       {% endif %}
     </div>
 

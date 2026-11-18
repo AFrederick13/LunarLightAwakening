@@ -2,7 +2,6 @@
 title: "From Bill's Moonstones to Lunar Light Awakening: A Journey of Transformation"
 author: "Lisa Bernarde"
 date: 2024-04-17T12:00:00Z
-readTime: "2 min read"
 image: "/images/PointedCrystals.avif"
 imageAlt: "Crystal points arranged on a soft pink background"
 ---

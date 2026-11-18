@@ -23,9 +23,9 @@ export default function (eleventyConfig) {
       .slice(0, limit);
   });
 
-  eleventyConfig.addFilter("excerpt", (htmlContent, maxLength = 155) => {
+  function stripHtml(htmlContent) {
     if (!htmlContent) return "";
-    const text = htmlContent
+    return htmlContent
       .replace(/<[^>]+>/g, " ")
       .replace(/&nbsp;/gi, " ")
       .replace(/&amp;/gi, "&")
@@ -35,11 +35,22 @@ export default function (eleventyConfig) {
       .replace(/&gt;/gi, ">")
       .replace(/\s+/g, " ")
       .trim();
+  }
 
-    if (text.length <= maxLength) return text;
+  eleventyConfig.addFilter("excerpt", (htmlContent, maxLength = 155) => {
+    const text = stripHtml(htmlContent);
+    if (!text || text.length <= maxLength) return text;
     const trimmed = text.slice(0, maxLength);
     const lastSpace = trimmed.lastIndexOf(" ");
     return (lastSpace > 0 ? trimmed.slice(0, lastSpace) : trimmed) + "...";
+  });
+
+  eleventyConfig.addFilter("readTime", (htmlContent, wordsPerMinute = 200) => {
+    const text = stripHtml(htmlContent);
+    if (!text) return "1 min read";
+    const wordCount = text.split(/\s+/).length;
+    const minutes = Math.max(1, Math.ceil(wordCount / wordsPerMinute));
+    return `${minutes} min read`;
   });
 
   eleventyConfig.addCollection("events", (collectionApi) => {
