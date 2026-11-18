@@ -6,6 +6,7 @@ pageClass: page-events
 permalink: /events-and-classes/
 ---
 
+{% if collections.events.length %}
 <div class="events-grid">
   {% for event in collections.events %}
   <article class="event-card">
@@ -16,3 +17,6 @@ permalink: /events-and-classes/
   </article>
   {% endfor %}
 </div>
+{% else %}
+<p class="empty-state">No upcoming events or classes are currently scheduled. Please check back later!</p>
+{% endif %}

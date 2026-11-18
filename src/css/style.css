@@ -105,6 +105,11 @@ body {
   display: block;
 }
 
+.empty-state {
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+
 /* Home Page */
 .site-main.page-home img {
   max-width: 520px;

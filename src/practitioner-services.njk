@@ -8,6 +8,7 @@ permalink: /practitioner-services/
 
 <h1>Our Team of Practitioners</h1>
 
+{% if collections.practitioners.length %}
 <div class="practitioners-grid">
   {% for practitioner in collections.practitioners %}
   <article class="practitioner-card{% if not practitioner.data.photo %} no-photo{% endif %}">
@@ -22,3 +23,6 @@ permalink: /practitioner-services/
   </article>
   {% endfor %}
 </div>
+{% else %}
+<p class="empty-state">Practitioner information is being updated. Please check back later!</p>
+{% endif %}

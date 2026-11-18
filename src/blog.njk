@@ -19,6 +19,7 @@ permalink: /blog/
 
   <h1 class="blog-index-title">All Posts</h1>
 
+  {% if collections.posts.length %}
   <div class="blog-posts-list" id="blog-posts-list">
     {% for post in collections.posts | reverse %}
     {% set previewText = post.data.excerpt or (post.templateContent | excerpt) %}
@@ -63,6 +64,9 @@ permalink: /blog/
     </article>
     {% endfor %}
   </div>
+  {% else %}
+  <p class="empty-state">No blog posts yet. Check back later!</p>
+  {% endif %}
 
   <p class="blog-no-results" id="blog-no-results" hidden>No matching posts found.</p>
 </div>
