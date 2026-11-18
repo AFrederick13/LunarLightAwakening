@@ -12,8 +12,12 @@ pageClass: page-blog-post
     <div class="blog-meta">
       <span class="author-avatar" aria-hidden="true">{{ (author | default("Lisa Bernarde"))[0] }}</span>
       <span class="author-name">{{ author | default("Lisa Bernarde") }}</span>
+      {% set postDate = date or page.date %}
+      {% set postDateIso = postDate | isoDate %}
+      {% if postDateIso %}
       <span class="meta-dot">&bull;</span>
-      <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>
+      <time datetime="{{ postDateIso }}">{{ postDate | readableDate }}</time>
+      {% endif %}
       {% set postReadTime = readTime or (content | readTime) %}
       {% if postReadTime %}
       <span class="meta-dot">&bull;</span>

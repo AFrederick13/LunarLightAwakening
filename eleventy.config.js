@@ -3,8 +3,16 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/css");
   eleventyConfig.addPassthroughCopy("./src/images");
 
+  function parseValidDate(dateObj) {
+    if (!dateObj) return null;
+    const parsed = new Date(dateObj);
+    return Number.isNaN(parsed.getTime()) ? null : parsed;
+  }
+
   eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return new Date(dateObj).toLocaleDateString("en-US", {
+    const parsed = parseValidDate(dateObj);
+    if (!parsed) return "";
+    return parsed.toLocaleDateString("en-US", {
       year: "numeric",
       month: "short",
       day: "numeric",
@@ -13,7 +21,8 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("isoDate", (dateObj) => {
-    return new Date(dateObj).toISOString().slice(0, 10);
+    const parsed = parseValidDate(dateObj);
+    return parsed ? parsed.toISOString().slice(0, 10) : "";
   });
 
   eleventyConfig.addFilter("recentPosts", (posts, currentUrl, limit = 2) => {

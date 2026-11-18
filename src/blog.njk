@@ -38,8 +38,10 @@ permalink: /blog/
           <div class="blog-card-meta-text">
             <span class="author-name">{{ post.data.author | default("Lisa Bernarde") }}</span>
             <span class="blog-card-date">
-              <time datetime="{{ post.data.date | isoDate }}">{{ post.data.date | readableDate }}</time>
-              {% if postReadTime %} &bull; {{ postReadTime }}{% endif %}
+              {% set postDate = post.data.date or post.date %}
+              {% set postDateIso = postDate | isoDate %}
+              {% if postDateIso %}<time datetime="{{ postDateIso }}">{{ postDate | readableDate }}</time>{% endif %}
+              {% if postReadTime %}{% if postDateIso %} &bull; {% endif %}{{ postReadTime }}{% endif %}
             </span>
           </div>
         </div>
