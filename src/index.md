@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.njk
 title: Lunar Light Awakening
+pageClass: page-home
 ---
 
 # WELCOME TO LUNAR LIGHT AWAKENING!!

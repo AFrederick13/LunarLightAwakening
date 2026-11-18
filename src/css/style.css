@@ -101,7 +101,14 @@ body {
   margin-bottom: 1.6rem;
 }
 
-.site-main img:not(.site-logo),
+:where(.site-main) img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Home Page */
+.site-main.page-home img,
 .diagram-image {
   max-width: 520px;
   width: 100%;
