@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.njk
-title: Lunar Light Awakening
+title: Merchandise | Lunar Light Awakening
 pageClass: page-merchandise
 ---
 

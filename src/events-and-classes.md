@@ -1,6 +1,6 @@
 ---
 layout: layouts/base.njk
-title: Lunar Light Awakening
+title: Events and Classes | Lunar Light Awakening
 pageClass: page-events
 ---
 
