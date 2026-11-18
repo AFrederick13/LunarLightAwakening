@@ -5,7 +5,6 @@ date: 2024-04-17T10:00:00Z
 readTime: "3 min read"
 image: "/images/DramaticCrystals.avif"
 imageAlt: "Assorted raw crystals resting in sunlight and shadow"
-excerpt: "The Power of Crystals: How They Can Transform Your Life. A vibrant and captivating collection showcasing a variety of..."
 ---
 
 The Power of Crystals: How They Can Transform Your Life

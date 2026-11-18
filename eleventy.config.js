@@ -23,6 +23,25 @@ export default function (eleventyConfig) {
       .slice(0, limit);
   });
 
+  eleventyConfig.addFilter("excerpt", (htmlContent, maxLength = 155) => {
+    if (!htmlContent) return "";
+    const text = htmlContent
+      .replace(/<[^>]+>/g, " ")
+      .replace(/&nbsp;/gi, " ")
+      .replace(/&amp;/gi, "&")
+      .replace(/&quot;/gi, '"')
+      .replace(/&#39;|&apos;/gi, "'")
+      .replace(/&lt;/gi, "<")
+      .replace(/&gt;/gi, ">")
+      .replace(/\s+/g, " ")
+      .trim();
+
+    if (text.length <= maxLength) return text;
+    const trimmed = text.slice(0, maxLength);
+    const lastSpace = trimmed.lastIndexOf(" ");
+    return (lastSpace > 0 ? trimmed.slice(0, lastSpace) : trimmed) + "...";
+  });
+
   return {
     dir: {
       input: "src",

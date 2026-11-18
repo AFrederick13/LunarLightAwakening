@@ -5,7 +5,6 @@ date: 2024-04-17T11:00:00Z
 readTime: "3 min read"
 image: "/images/personpainting.avif"
 imageAlt: "Artist painting at an easel in a sunlit studio"
-excerpt: "Unlocking Your Intuition: The Benefits of Oracle Readings. Have you ever felt a strong gut feeling or a sense of knowing that you..."
 ---
 
 Unlocking Your Intuition: The Benefits of Oracle Readings
