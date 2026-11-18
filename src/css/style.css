@@ -285,12 +285,12 @@ body {
   margin-bottom: 0.9rem;
 }
 
-.practitioner-card h2 + p {
+.practitioner-card > h2:first-of-type + p {
   text-align: center;
   margin-bottom: 1.6rem;
 }
 
-.practitioner-card h2 + p a {
+.practitioner-card > h2:first-of-type + p a {
   display: inline-block;
   width: 100%;
   max-width: 245px;
@@ -304,8 +304,8 @@ body {
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-.practitioner-card h2 + p a:hover,
-.practitioner-card h2 + p a:focus-visible {
+.practitioner-card > h2:first-of-type + p a:hover,
+.practitioner-card > h2:first-of-type + p a:focus-visible {
   background-color: #6498dc;
   color: #ffffff;
 }
