@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.njk
 title: Merchandise | Lunar Light Awakening
+description: "Explore crystals, stones, handcrafted jewelry, herbal products, space clearing supplies, essential oils, clothing, and local art at Lunar Light Awakening."
 pageClass: page-merchandise
 ---
 

@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title | default("Lunar Light Awakening") }}</title>
+  {% set postBodyHtml = content.split('<div class="blog-post-body">')[1].split('<div class="blog-share-bar">')[0] if pageClass == "page-blog-post" and '<div class="blog-post-body">' in content else "" %}
+  {% set metaDescription = description or (postBodyHtml | excerpt(155) if postBodyHtml else "Lunar Light Awakening in Schofield, WI offers stones, crystals, jewelry, herbal products, classes, workshops, and holistic practitioner services.") %}
+  <meta name="description" content="{{ metaDescription }}">
+  <title>{% if pageClass == "page-blog-post" and title %}{{ title }} | Lunar Light Awakening{% else %}{{ title | default("Lunar Light Awakening") }}{% endif %}</title>
+  <link rel="icon" type="image/webp" sizes="48x48" href="/images/LogoMoon.webp">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 

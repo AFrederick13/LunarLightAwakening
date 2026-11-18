@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.njk
-title: Lunar Light Awakening
+title: Home | Lunar Light Awakening
+description: "Lunar Light Awakening in Schofield, WI offers stones, crystals, jewelry, herbal products, classes, workshops, and holistic practitioner services."
 pageClass: page-home
 ---
 
