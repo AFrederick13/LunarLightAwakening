@@ -1,0 +1,187 @@
+settings:
+  content:
+    merge: true
+
+media:
+  input: src/images
+  output: /images
+  extensions: [avif, jpg, jpeg, png, webp]
+  rename: true
+
+content:
+  - name: events
+    label: Events & Classes
+    type: collection
+    path: src/events
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    exclude: ["events.json"]
+    view:
+      primary: title
+      fields: [title, dateText, order, active]
+      sort: [order, title]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Event Title
+        type: string
+        required: true
+      - name: dateText
+        label: Date (Optional)
+        type: string
+      - name: timeText
+        label: Time (Optional)
+        type: string
+      - name: order
+        label: Display Order
+        type: number
+        default: 1
+      - name: active
+        label: Show on Website
+        type: boolean
+        default: true
+      - name: body
+        label: Description
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: practitioners
+    label: Practitioners
+    type: collection
+    path: src/practitioners
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    exclude: ["practitioners.json"]
+    view:
+      primary: name
+      fields: [name, buttonText, order, active]
+      sort: [order, name]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: name
+        label: Practitioner Name
+        type: string
+        required: true
+      - name: photo
+        label: Photo / Logo
+        type: image
+      - name: photoAlt
+        label: Photo Description (Alt Text)
+        type: string
+      - name: buttonText
+        label: Button Label
+        type: string
+      - name: buttonUrl
+        label: Button Link (URL)
+        type: string
+      - name: order
+        label: Display Order
+        type: number
+        default: 1
+      - name: active
+        label: Show on Website
+        type: boolean
+        default: true
+      - name: body
+        label: Bio & Services
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: posts
+    label: Blog Posts
+    type: collection
+    path: src/blog/posts
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    exclude: ["posts.json"]
+    view:
+      primary: title
+      fields: [title, author, date]
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Post Title
+        type: string
+        required: true
+      - name: author
+        label: Author
+        type: string
+        default: "Lisa Bernarde"
+      - name: date
+        label: Publish Date
+        type: date
+        required: true
+      - name: image
+        label: Cover Thumbnail
+        type: image
+      - name: imageAlt
+        label: Cover Image Description (Alt Text)
+        type: string
+      - name: body
+        label: Post Content
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: home
+    label: Home Page
+    type: file
+    path: src/index.md
+    format: yaml-frontmatter
+    fields:
+      - name: layout
+        type: string
+        hidden: true
+        default: layouts/base.njk
+      - name: pageClass
+        type: string
+        hidden: true
+        default: page-home
+      - name: title
+        label: Browser Tab Title
+        type: string
+        hidden: true
+      - name: description
+        label: Search Description (SEO)
+        type: text
+      - name: body
+        label: Home Page Content
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: merchandise
+    label: Merchandise Page
+    type: file
+    path: src/merchandise.md
+    format: yaml-frontmatter
+    fields:
+      - name: layout
+        type: string
+        hidden: true
+        default: layouts/base.njk
+      - name: pageClass
+        type: string
+        hidden: true
+        default: page-merchandise
+      - name: title
+        label: Browser Tab Title
+        type: string
+        hidden: true
+      - name: description
+        label: Search Description (SEO)
+        type: text
+      - name: body
+        label: Merchandise Page Content
+        type: rich-text
+        options:
+          format: markdown
