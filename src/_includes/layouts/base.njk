@@ -90,6 +90,37 @@
         }
       });
     })();
+
+    (function () {
+      const grid = document.querySelector(".events-grid");
+      if (!grid) return;
+
+      const cards = Array.from(grid.querySelectorAll(".event-card"));
+
+      function layoutEvents() {
+        if (window.innerWidth <= 768) {
+          grid.classList.remove("is-masonry");
+          cards.forEach(function (card) {
+            card.style.gridRowEnd = "";
+          });
+          return;
+        }
+
+        grid.classList.add("is-masonry");
+        const gap = parseFloat(getComputedStyle(grid).columnGap) || 14;
+        cards.forEach(function (card) {
+          card.style.gridRowEnd = "";
+        });
+        cards.forEach(function (card) {
+          const height = Math.ceil(card.getBoundingClientRect().height);
+          card.style.gridRowEnd = "span " + Math.ceil(height + gap);
+        });
+      }
+
+      window.addEventListener("load", layoutEvents);
+      window.addEventListener("resize", layoutEvents);
+      layoutEvents();
+    })();
   </script>
 
 </body>
