@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+title: Lunar Light Awakening
+pageClass: page-practitioners
+permalink: /practitioner-services/
+---
+
+<h1>Our Team of Practitioners</h1>
+
+<div class="practitioners-grid">
+  {% for practitioner in collections.practitioners %}
+  <article class="practitioner-card{% if not practitioner.data.photo %} no-photo{% endif %}">
+    {% if practitioner.data.photo %}
+    <p class="practitioner-card-photo"><img src="{{ practitioner.data.photo }}" alt="{{ practitioner.data.photoAlt | default(practitioner.data.name) }}"></p>
+    {% endif %}
+    <h2>{{ practitioner.data.name }}</h2>
+    {% if practitioner.data.buttonText and practitioner.data.buttonUrl %}
+    <p><a href="{{ practitioner.data.buttonUrl }}">{{ practitioner.data.buttonText }}</a></p>
+    {% endif %}
+    {{ practitioner.templateContent | safe }}
+  </article>
+  {% endfor %}
+</div>

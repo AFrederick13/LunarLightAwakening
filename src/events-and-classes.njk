@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+title: Lunar Light Awakening
+pageClass: page-events
+permalink: /events-and-classes/
+---
+
+<div class="events-grid">
+  {% for event in collections.events %}
+  <article class="event-card">
+    <h2>{{ event.data.title }}</h2>
+    {% if event.data.dateText %}<h3>{{ event.data.dateText }}</h3>{% endif %}
+    {% if event.data.timeText %}<h3>{{ event.data.timeText }}</h3>{% endif %}
+    {{ event.templateContent | safe }}
+  </article>
+  {% endfor %}
+</div>

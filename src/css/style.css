@@ -241,16 +241,20 @@ body {
   text-align: left;
 }
 
-.practitioner-card > :not(:first-child) {
+.practitioner-card.no-photo {
+  padding-top: 1.5rem;
+}
+
+.practitioner-card > :not(.practitioner-card-photo) {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
 }
 
-.practitioner-card > p:first-child {
+.practitioner-card > .practitioner-card-photo {
   margin: 0 0 1.5rem 0;
 }
 
-.practitioner-card > p:first-child img {
+.practitioner-card > .practitioner-card-photo img {
   width: 100%;
   max-width: none;
   height: auto;
@@ -300,6 +304,19 @@ body {
   line-height: 1.58;
   color: #ffffff;
   margin-bottom: 1.15rem;
+}
+
+.practitioner-card ul,
+.practitioner-card ol {
+  color: #ffffff;
+  font-size: 0.98rem;
+  line-height: 1.58;
+  padding-left: 1.25rem;
+  margin-bottom: 1.15rem;
+}
+
+.practitioner-card li {
+  margin-bottom: 0.35rem;
 }
 
 .practitioner-card a {

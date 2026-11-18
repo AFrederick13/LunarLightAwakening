@@ -42,6 +42,28 @@ export default function (eleventyConfig) {
     return (lastSpace > 0 ? trimmed.slice(0, lastSpace) : trimmed) + "...";
   });
 
+  eleventyConfig.addCollection("events", (collectionApi) => {
+    return collectionApi
+      .getFilteredByGlob("src/events/*.md")
+      .filter((item) => item.data.active !== false)
+      .sort((a, b) => {
+        const orderDiff = (a.data.order ?? 999) - (b.data.order ?? 999);
+        if (orderDiff !== 0) return orderDiff;
+        return (a.data.title || "").localeCompare(b.data.title || "");
+      });
+  });
+
+  eleventyConfig.addCollection("practitioners", (collectionApi) => {
+    return collectionApi
+      .getFilteredByGlob("src/practitioners/*.md")
+      .filter((item) => item.data.active !== false)
+      .sort((a, b) => {
+        const orderDiff = (a.data.order ?? 999) - (b.data.order ?? 999);
+        if (orderDiff !== 0) return orderDiff;
+        return (a.data.name || "").localeCompare(b.data.name || "");
+      });
+  });
+
   return {
     dir: {
       input: "src",
