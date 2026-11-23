@@ -1,4 +1,8 @@
+import { HtmlBasePlugin } from "@11ty/eleventy";
+
 export default function (eleventyConfig) {
+  eleventyConfig.addPlugin(HtmlBasePlugin);
+
   // Pass through static assets
   eleventyConfig.addPassthroughCopy("./src/css");
   eleventyConfig.addPassthroughCopy("./src/images");
@@ -83,10 +87,6 @@ export default function (eleventyConfig) {
         return (a.data.name || "").localeCompare(b.data.name || "");
       });
   });
-
-eleventyConfig.addPassthroughCopy("src/css");
-eleventyConfig.addPassthroughCopy("src/images");
-eleventyConfig.addPassthroughCopy("src/js");
 
   return {
     pathPrefix: "/LunarLightAwakening/",
