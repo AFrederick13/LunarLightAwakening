@@ -1,7 +1,7 @@
 ---
 title: "The Power of Crystals: How They Can Transform Your Life"
 author: "Lisa Bernarde"
-date: 2024-04-17T10:00:00Z
+date: 2024-04-17
 image: "/images/DramaticCrystals.avif"
 imageAlt: "Assorted raw crystals resting in sunlight and shadow"
 ---

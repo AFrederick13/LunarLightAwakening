@@ -120,6 +120,8 @@ content:
         label: Publish Date
         type: date
         required: true
+        options:
+          format: "yyyy-MM-dd"
       - name: image
         label: Cover Thumbnail
         type: image

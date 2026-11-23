@@ -1,7 +1,7 @@
 ---
 title: "Unlocking Your Intuition: The Benefits of Oracle Readings"
 author: "Lisa Bernarde"
-date: 2024-04-17T11:00:00Z
+date: 2024-04-17
 image: "/images/personpainting.avif"
 imageAlt: "Artist painting at an easel in a sunlit studio"
 ---
