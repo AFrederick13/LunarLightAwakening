@@ -84,11 +84,12 @@ export default function (eleventyConfig) {
       });
   });
 
-  eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("js");
+eleventyConfig.addPassthroughCopy("src/css");
+eleventyConfig.addPassthroughCopy("src/images");
+eleventyConfig.addPassthroughCopy("src/js");
 
   return {
+    // pathPrefix: "/LunarLightAwakening/",
     dir: {
       input: "src",
       includes: "_includes",
