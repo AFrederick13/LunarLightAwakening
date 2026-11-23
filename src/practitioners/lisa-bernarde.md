@@ -5,7 +5,7 @@ photoAlt: Lisa Bernarde - Graceful Guidance
 buttonText: Graceful Guidance
 buttonUrl: https://www.gracefulguidancelisa.com
 order: 1
-active: false
+active: true
 ---
 I have always cared deeply for those around me whether it was someone I've known my whole life or someone I'd just met. A strangers story can quickly tug at my heart strings bringing forth the deep compassion I feel for those I encounter in life.  
 
