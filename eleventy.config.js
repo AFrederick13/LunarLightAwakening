@@ -89,7 +89,7 @@ eleventyConfig.addPassthroughCopy("src/images");
 eleventyConfig.addPassthroughCopy("src/js");
 
   return {
-    // pathPrefix: "/LunarLightAwakening/",
+    pathPrefix: "/LunarLightAwakening/",
     dir: {
       input: "src",
       includes: "_includes",
