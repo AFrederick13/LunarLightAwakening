@@ -7,8 +7,6 @@ imageAlt: Crystal points arranged on a soft pink background
 ---
 From Bill's Moonstones to Lunar Light Awakening: A Journey of Transformation
 
-test test test
-
 Have you ever experienced a transformation in your life that completely changed your perspective and brought about a new sense of purpose? That's exactly what happened to Lunar Light Awakening, a metaphysical crystal shop based in Wisconsin. Formerly known as Bill's Moonstones, this shop underwent a remarkable journey of transformation, resulting in a shift in branding and a unique selling point.
 
 The transition from Bill's Moonstones to Lunar Light Awakening was not just a change in name; it was a complete reimagining of the shop's identity. The new name, Lunar Light Awakening, reflects the shop's focus on spiritual growth and awareness, leading to overall wellness.  
