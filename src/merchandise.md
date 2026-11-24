@@ -19,7 +19,6 @@ gallery:
   - /images/Merch11.avif
   - /images/Merch12.avif
   - /images/Merch13.avif
-  - /images/websitecolorpallete.jpg
   - /images/Merch14.avif
 ---
 Our store has its roots as a metaphysical crystal shop, so rocks and crystals are a large component of our products. However, we have evolved and expanded and now offer a larger variety of products to support your health and wellness journey.
