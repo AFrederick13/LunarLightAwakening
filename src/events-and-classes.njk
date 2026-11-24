@@ -10,6 +10,9 @@ permalink: /events-and-classes/
 <div class="events-grid">
   {% for event in collections.events %}
   <article class="event-card">
+    {% if event.data.image %}
+    <p class="event-card-image"><img src="{{ event.data.image }}" alt="{{ event.data.imageAlt | default(event.data.title) }}"></p>
+    {% endif %}
     <h2>{{ event.data.title }}</h2>
     {% if event.data.dateText %}<h3>{{ event.data.dateText }}</h3>{% endif %}
     {% if event.data.timeText %}<h3>{{ event.data.timeText }}</h3>{% endif %}

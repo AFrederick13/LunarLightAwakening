@@ -1,0 +1,8 @@
+---
+layout: layouts/base.njk
+---
+
+{{ content | safe }}
+{% if diagramImage %}
+<p><img src="{{ diagramImage }}" alt="{{ diagramAlt | default('') }}"></p>
+{% endif %}

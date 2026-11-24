@@ -9,6 +9,90 @@ media:
   rename: true
 
 content:
+  - name: site
+    label: Site Branding
+    type: file
+    path: src/_data/site.json
+    format: json
+    fields:
+      - name: logo
+        label: Header Logo (Shown on Every Page)
+        type: image
+        required: true
+      - name: logoAlt
+        label: Header Logo Alt Text
+        type: string
+      - name: favicon
+        label: Browser Tab Icon (Favicon)
+        type: image
+
+  - name: home
+    label: Home Page
+    type: file
+    path: src/index.md
+    format: yaml-frontmatter
+    fields:
+      - name: layout
+        type: string
+        hidden: true
+        default: layouts/home.njk
+      - name: pageClass
+        type: string
+        hidden: true
+        default: page-home
+      - name: title
+        label: Browser Tab Title
+        type: string
+        hidden: true
+      - name: description
+        label: Search Description (SEO)
+        type: text
+      - name: diagramImage
+        label: Bottom Diagram Image
+        type: image
+      - name: diagramAlt
+        label: Bottom Image Description (Alt Text)
+        type: string
+      - name: body
+        label: Home Page Text
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+
+  - name: merchandise
+    label: Merchandise Page
+    type: file
+    path: src/merchandise.md
+    format: yaml-frontmatter
+    fields:
+      - name: layout
+        type: string
+        hidden: true
+        default: layouts/merchandise.njk
+      - name: pageClass
+        type: string
+        hidden: true
+        default: page-merchandise
+      - name: title
+        label: Browser Tab Title
+        type: string
+        hidden: true
+      - name: description
+        label: Search Description (SEO)
+        type: text
+      - name: body
+        label: Merchandise Page Text
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+      - name: gallery
+        label: Store Photos
+        type: image
+        options:
+          multiple: true
+
   - name: events
     label: Events & Classes
     type: collection
@@ -34,6 +118,12 @@ content:
       - name: timeText
         label: Time (Optional)
         type: string
+      - name: image
+        label: Event Image (Optional)
+        type: image
+      - name: imageAlt
+        label: Event Image Description (Alt Text)
+        type: string
       - name: order
         label: Display Order
         type: number
@@ -47,6 +137,7 @@ content:
         type: rich-text
         options:
           format: markdown
+          media: false
 
   - name: practitioners
     label: Practitioners
@@ -92,6 +183,7 @@ content:
         type: rich-text
         options:
           format: markdown
+          media: false
 
   - name: posts
     label: Blog Posts
@@ -123,67 +215,26 @@ content:
         options:
           format: "yyyy-MM-dd"
       - name: image
-        label: Cover Thumbnail
+        label: Post Image & Cover Thumbnail
         type: image
       - name: imageAlt
-        label: Cover Image Description (Alt Text)
+        label: Image Description (Alt Text)
         type: string
+      - name: imagePosition
+        label: Show Image Inside Post
+        type: select
+        default: bottom
+        options:
+          values:
+            - label: Bottom of Post
+              value: bottom
+            - label: Top of Post
+              value: top
+            - label: Thumbnail Only (Hide Inside Post)
+              value: none
       - name: body
-        label: Post Content
+        label: Post Text
         type: rich-text
         options:
           format: markdown
-
-  - name: home
-    label: Home Page
-    type: file
-    path: src/index.md
-    format: yaml-frontmatter
-    fields:
-      - name: layout
-        type: string
-        hidden: true
-        default: layouts/base.njk
-      - name: pageClass
-        type: string
-        hidden: true
-        default: page-home
-      - name: title
-        label: Browser Tab Title
-        type: string
-        hidden: true
-      - name: description
-        label: Search Description (SEO)
-        type: text
-      - name: body
-        label: Home Page Content
-        type: rich-text
-        options:
-          format: markdown
-
-  - name: merchandise
-    label: Merchandise Page
-    type: file
-    path: src/merchandise.md
-    format: yaml-frontmatter
-    fields:
-      - name: layout
-        type: string
-        hidden: true
-        default: layouts/base.njk
-      - name: pageClass
-        type: string
-        hidden: true
-        default: page-merchandise
-      - name: title
-        label: Browser Tab Title
-        type: string
-        hidden: true
-      - name: description
-        label: Search Description (SEO)
-        type: text
-      - name: body
-        label: Merchandise Page Content
-        type: rich-text
-        options:
-          format: markdown
+          media: false

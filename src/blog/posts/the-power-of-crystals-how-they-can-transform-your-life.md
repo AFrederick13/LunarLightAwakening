@@ -4,6 +4,7 @@ author: "Lisa Bernarde"
 date: 2024-04-17
 image: "/images/DramaticCrystals.avif"
 imageAlt: "Assorted raw crystals resting in sunlight and shadow"
+imagePosition: bottom
 ---
 
 The Power of Crystals: How They Can Transform Your Life
@@ -33,5 +34,3 @@ Tips for Working with Crystals:
 - Regular Practice: Incorporate crystals into your daily life through meditation, wearing crystal jewelry, or placing them in your environment. Consistency is key to experiencing the transformative effects of crystals.
 
 In conclusion, crystals have the power to transform our lives in various ways. By harnessing their energies and working with them intentionally, we can enhance our well-being, promote emotional healing, manifest our goals, enhance our intuition, and create sacred spaces. So why not explore the transformative potential of crystals and invite their magic into your life?  
-
-![Assorted raw crystals resting in sunlight and shadow](/images/DramaticCrystals.avif)

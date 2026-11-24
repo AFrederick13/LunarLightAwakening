@@ -27,8 +27,15 @@ pageClass: page-blog-post
 
     <h1 class="blog-post-title">{{ title }}</h1>
 
+    {% set pos = imagePosition | default("bottom") %}
     <div class="blog-post-body">
+      {% if image and pos == "top" %}
+      <p><img src="{{ image }}" alt="{{ imageAlt | default(title) }}"></p>
+      {% endif %}
       {{ content | safe }}
+      {% if image and pos == "bottom" %}
+      <p><img src="{{ image }}" alt="{{ imageAlt | default(title) }}"></p>
+      {% endif %}
     </div>
 
     <div class="blog-share-bar">

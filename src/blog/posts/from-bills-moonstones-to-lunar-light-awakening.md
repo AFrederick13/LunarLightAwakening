@@ -4,6 +4,7 @@ author: Lisa Bernarde
 date: 2024-04-17
 image: /images/PointedCrystals.avif
 imageAlt: Crystal points arranged on a soft pink background
+imagePosition: bottom
 ---
 From Bill's Moonstones to Lunar Light Awakening: A Journey of Transformation
 
@@ -20,5 +21,3 @@ If you're new to the world of crystals and metaphysical practices, Lunar Light A
 As Lunar Light Awakening continues to grow and evolve, it remains committed to its mission of providing a transformative experience for its customers. The journey from Bill's Moonstones to Lunar Light Awakening is a testament to the power of embracing change and following your true calling. Whether you're a seasoned crystal enthusiast or just beginning your spiritual journey, Lunar Light Awakening welcomes you with open arms.
 
 So, if you're in Wisconsin or simply looking for an online metaphysical shop, be sure to check out Lunar Light Awakening. Explore their wide range of crystals, jewelry, and other products, and embark on your own journey of transformation. Remember, the power to awaken your inner light lies within you, and Lunar Light Awakening is here to guide you every step of the way.
-
-![Crystal points arranged on a soft pink background](/images/PointedCrystals.avif)

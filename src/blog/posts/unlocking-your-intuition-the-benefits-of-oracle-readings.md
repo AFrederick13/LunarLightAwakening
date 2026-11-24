@@ -4,6 +4,7 @@ author: "Lisa Bernarde"
 date: 2024-04-17
 image: "/images/personpainting.avif"
 imageAlt: "Artist painting at an easel in a sunlit studio"
+imagePosition: bottom
 ---
 
 Unlocking Your Intuition: The Benefits of Oracle Readings
@@ -35,5 +36,3 @@ If you're new to oracle readings, here are a few tips to get started:
 - Journal your insights: After a reading, take some time to journal your insights and reflections. Writing down your thoughts can help you process the messages you received and gain further clarity.
 
 Oracle readings are a beautiful and transformative practice that can help you unlock your intuition and connect with the wisdom of the universe. Whether you're seeking guidance, clarity, or self-discovery, oracle readings can be a valuable tool on your spiritual journey. Visit Luna Light Awakening to explore our selection of oracle card decks and begin your journey of unlocking your intuition today.  
-
-![Artist painting at an easel in a sunlit studio](/images/personpainting.avif)

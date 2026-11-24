@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+---
+
+{{ content | safe }}
+{% if gallery and gallery.length %}
+{% for row in gallery | groupGalleryImages %}
+<p>{% for imgPath in row %}<img src="{{ imgPath }}" alt="Store merchandise display">{% if not loop.last %} {% endif %}{% endfor %}</p>
+{% endfor %}
+{% endif %}

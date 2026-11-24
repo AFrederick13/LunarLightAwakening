@@ -173,6 +173,16 @@ body {
   overflow-wrap: break-word;
 }
 
+.event-card-image {
+  margin-bottom: 1.4rem;
+}
+
+.event-card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .event-card h2,
 .event-card h3 {
   color: #2c425f;
