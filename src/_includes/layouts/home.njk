@@ -3,6 +3,6 @@ layout: layouts/base.njk
 ---
 
 {{ content | safe }}
-{% if diagramImage %}
-<p><img src="{{ diagramImage }}" alt="{{ diagramAlt | default('') }}"></p>
+{% if featuredImage %}
+<p><img src="{{ featuredImage }}" alt="{{ featuredImageAlt | default('') }}"></p>
 {% endif %}

@@ -47,11 +47,11 @@ content:
       - name: description
         label: Search Description (SEO)
         type: text
-      - name: diagramImage
-        label: Bottom Diagram Image
+      - name: featuredImage
+        label: Featured Image
         type: image
-      - name: diagramAlt
-        label: Bottom Image Description (Alt Text)
+      - name: featuredImageAlt
+        label: Featured Image Description (Alt Text)
         type: string
       - name: body
         label: Home Page Text
