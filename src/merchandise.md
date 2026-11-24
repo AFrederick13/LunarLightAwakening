@@ -1,7 +1,9 @@
 ---
 layout: layouts/merchandise.njk
 title: Merchandise | Lunar Light Awakening
-description: "Explore crystals, stones, handcrafted jewelry, herbal products, space clearing supplies, essential oils, clothing, and local art at Lunar Light Awakening."
+description: Explore crystals, stones, handcrafted jewelry, herbal products,
+  space clearing supplies, essential oils, clothing, and local art at Lunar
+  Light Awakening.
 pageClass: page-merchandise
 gallery:
   - /images/Merch1.avif
@@ -17,9 +19,9 @@ gallery:
   - /images/Merch11.avif
   - /images/Merch12.avif
   - /images/Merch13.avif
+  - /images/websitecolorpallete.jpg
   - /images/Merch14.avif
 ---
-
 Our store has its roots as a metaphysical crystal shop, so rocks and crystals are a large component of our products. However, we have evolved and expanded and now offer a larger variety of products to support your health and wellness journey.
 
 **Crystals and rocks:** We carry tumbled, raw, freeform, and carved/shaped pieces in a large variety of stone types. Our selection is always changing.....
