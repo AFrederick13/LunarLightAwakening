@@ -96,12 +96,12 @@
     })();
 
     (function () {
-      const grid = document.querySelector(".events-grid");
-      if (!grid) return;
+      const configs = [
+        { gridSelector: ".events-grid", cardSelector: ".event-card", defaultGap: 14 },
+        { gridSelector: ".practitioners-grid", cardSelector: ".practitioner-card", defaultGap: 32 },
+      ];
 
-      const cards = Array.from(grid.querySelectorAll(".event-card"));
-
-      function layoutEvents() {
+      function layoutGrid(grid, cards, defaultGap) {
         if (window.innerWidth <= 768) {
           grid.classList.remove("is-masonry");
           cards.forEach(function (card) {
@@ -111,7 +111,7 @@
         }
 
         grid.classList.add("is-masonry");
-        const gap = parseFloat(getComputedStyle(grid).columnGap) || 14;
+        const gap = parseFloat(getComputedStyle(grid).columnGap) || defaultGap;
         cards.forEach(function (card) {
           card.style.gridRowEnd = "";
         });
@@ -121,9 +121,37 @@
         });
       }
 
-      window.addEventListener("load", layoutEvents);
-      window.addEventListener("resize", layoutEvents);
-      layoutEvents();
+      const activeGrids = configs
+        .map(function (cfg) {
+          const grid = document.querySelector(cfg.gridSelector);
+          if (!grid) return null;
+          return {
+            grid: grid,
+            cards: Array.from(grid.querySelectorAll(cfg.cardSelector)),
+            defaultGap: cfg.defaultGap,
+          };
+        })
+        .filter(Boolean);
+
+      if (!activeGrids.length) return;
+
+      function layoutAll() {
+        activeGrids.forEach(function (item) {
+          layoutGrid(item.grid, item.cards, item.defaultGap);
+        });
+      }
+
+      activeGrids.forEach(function (item) {
+        item.grid.querySelectorAll("img").forEach(function (img) {
+          if (!img.complete) {
+            img.addEventListener("load", layoutAll);
+          }
+        });
+      });
+
+      window.addEventListener("load", layoutAll);
+      window.addEventListener("resize", layoutAll);
+      layoutAll();
     })();
   </script>
 
